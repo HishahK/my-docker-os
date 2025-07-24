@@ -1,0 +1,18 @@
+# Menentukan versi format file docker-compose
+version: '3.8'
+
+# Mendefinisikan semua layanan (container) yang akan kita jalankan
+services:
+  # Nama layanan kita, bisa apa saja. Kita sebut 'virtual-os'.
+  virtual-os:
+    # Instruksi untuk membangun image.
+    # Tanda titik (.) berarti "cari Dockerfile di direktori saat ini".
+    build: .
+    
+    # Beri nama yang mudah diingat untuk container yang berjalan
+    container_name: my-custom-os
+    
+    # Opsi ini sangat penting untuk mode interaktif.
+    # Sama dengan flag '-it' pada perintah 'docker run'.
+    stdin_open: true  # Menjaga input tetap terbuka (-i)
+    tty: true         # Membuat terminal (-t)

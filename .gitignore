@@ -1,0 +1,10 @@
+# Abaikan direktori build dan cache Docker
+build/
+.dockerignore
+
+# Abaikan file log
+*.log
+
+# File spesifik sistem operasi
+.DS_Store
+Thumbs.db
